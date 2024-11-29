@@ -59,11 +59,19 @@ export function SignUp() {
           <form onSubmit={handleSubmit(handleSignUp)} className="space-y-4">
             <div className="space-y-2">
               <Label htmlFor="restaurantName">Nome do resutante</Label>
-              <Input id="restaurantName" type="text" {...register('restaurantName')} />
+              <Input
+                id="restaurantName"
+                type="text"
+                {...register('restaurantName')}
+              />
             </div>
             <div className="space-y-2">
               <Label htmlFor="managerName">Seu nome</Label>
-              <Input id="managerName" type="text" {...register('managerName')} />
+              <Input
+                id="managerName"
+                type="text"
+                {...register('managerName')}
+              />
             </div>
             <div className="space-y-2">
               <Label htmlFor="email">E-mail</Label>
