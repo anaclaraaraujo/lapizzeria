@@ -7,6 +7,7 @@ interface PaginationProps {
   totalCount: number
   perPage: number
 }
+
 export function Pagination({
   pageIndex,
   perPage,
