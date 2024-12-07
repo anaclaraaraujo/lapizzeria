@@ -1,8 +1,8 @@
+import { useQuery } from '@tanstack/react-query'
 import { Utensils } from 'lucide-react'
 
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { useQuery } from '@tanstack/react-query'
 import { getMonthCanceledOrdersAmount } from '@/api/metrics/get-month-canceled-orders-amount'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 
 export function MonthOrdersAmountCard() {
   const { data: monthOrdersAmount } = useQuery({
@@ -43,6 +43,6 @@ export function MonthOrdersAmountCard() {
           </>
         )}
       </CardContent>
-    </Card >
+    </Card>
   )
 }

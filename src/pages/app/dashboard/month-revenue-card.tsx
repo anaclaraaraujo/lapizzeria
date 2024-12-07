@@ -1,8 +1,8 @@
+import { useQuery } from '@tanstack/react-query'
 import { DollarSign } from 'lucide-react'
 
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { useQuery } from '@tanstack/react-query'
 import { getMonthRevenue } from '@/api/metrics/get-month-revenue'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 
 export function MonthRevenueCard() {
   const { data: monthRevenue } = useQuery({
@@ -21,7 +21,9 @@ export function MonthRevenueCard() {
       <CardContent className="space-y-1">
         {monthRevenue && (
           <>
-            <span className="text-2xl font-bold tracking-tight">R$ 1248,60</span>
+            <span className="text-2xl font-bold tracking-tight">
+              R$ 1248,60
+            </span>
             <p className="text-xs text-muted-foreground">
               {monthRevenue.diffFromLastMonth >= 0 ? (
                 <>

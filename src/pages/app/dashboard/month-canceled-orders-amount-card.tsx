@@ -1,8 +1,8 @@
+import { useQuery } from '@tanstack/react-query'
 import { DollarSign } from 'lucide-react'
 
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { useQuery } from '@tanstack/react-query'
 import { getMonthCanceledOrdersAmount } from '@/api/metrics/get-month-canceled-orders-amount'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 
 export function MonthCanceledOrdersAmountCard() {
   const { data: monthCanceledOrdersAmount } = useQuery({
