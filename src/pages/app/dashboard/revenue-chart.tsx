@@ -1,3 +1,8 @@
+import { useQuery } from '@tanstack/react-query'
+import { subDays } from 'date-fns'
+import { Loader2 } from 'lucide-react'
+import { useMemo, useState } from 'react'
+import type { DateRange } from 'react-day-picker'
 import {
   CartesianGrid,
   Label,
@@ -8,6 +13,7 @@ import {
   YAxis,
 } from 'recharts'
 
+import { getDailyRevenueInPeriod } from '@/api/metrics/get-daily-revenue-in-period'
 import {
   Card,
   CardContent,
@@ -15,13 +21,7 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card'
-import { getDailyRevenueInPeriod } from '@/api/metrics/get-daily-revenue-in-period'
 import { DateRangePicker } from '@/components/ui/date-range-picker'
-import { useQuery } from '@tanstack/react-query'
-import { subDays } from 'date-fns'
-import { useState, useMemo } from 'react'
-import type { DateRange } from 'react-day-picker'
-import colors from 'tailwindcss/colors'
 
 export function RevenueChart() {
   const [dateRange, setDateRange] = useState<DateRange | undefined>({
@@ -60,7 +60,7 @@ export function RevenueChart() {
         </div>
       </CardHeader>
       <CardContent>
-        {chartData && (
+        {chartData ? (
           <ResponsiveContainer width="100%" height={240}>
             <LineChart data={chartData} style={{ fontSize: 12 }}>
               <XAxis dataKey="date" axisLine={false} tickLine={false} dy={16} />
@@ -85,6 +85,10 @@ export function RevenueChart() {
               />
             </LineChart>
           </ResponsiveContainer>
+        ) : (
+          <div className="flex h-[240px] w-full items-center justify-center">
+            <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
+          </div>
         )}
       </CardContent>
     </Card>
