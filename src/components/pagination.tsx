@@ -19,7 +19,7 @@ export function Pagination({
 
   return (
     <div className="flex items-center justify-between">
-      <span>Total de {totalCount} itens(s)</span>
+      <span>Total de {totalCount} item(s)</span>
 
       <div className="flex items-center gap-6 lg:gap-8">
         <div className="flex">
