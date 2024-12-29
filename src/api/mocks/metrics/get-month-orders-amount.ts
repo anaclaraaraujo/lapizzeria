@@ -1,6 +1,6 @@
 import { http, HttpResponse } from 'msw'
 
-import type { GetMonthOrdersAmountResponse } from '../metrics/get-month-orders-amount'
+import { GetMonthOrdersAmountResponse } from '@/api/metrics/get-month-orders-amount'
 
 export const getMonthOrdersAmountMock = http.get<
   never,

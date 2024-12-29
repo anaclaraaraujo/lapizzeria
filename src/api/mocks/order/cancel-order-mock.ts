@@ -1,6 +1,6 @@
 import { http, HttpResponse } from 'msw'
 
-import type { CancelOrderParams } from '../order/cancel-order'
+import type { CancelOrderParams } from '@/api/order/cancel-order'
 
 export const cancelOrderMock = http.patch<CancelOrderParams, never, never>(
   '/orders/:orderId/cancel',
@@ -8,6 +8,7 @@ export const cancelOrderMock = http.patch<CancelOrderParams, never, never>(
     if (params.orderId === 'error-order-id') {
       return new HttpResponse(null, { status: 400 })
     }
+
     return new HttpResponse(null, { status: 204 })
   },
 )

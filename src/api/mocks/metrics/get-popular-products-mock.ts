@@ -1,6 +1,6 @@
 import { http, HttpResponse } from 'msw'
 
-import type { GetPopularProductsResponse } from '../metrics/get-popular-products'
+import { GetPopularProductsResponse } from '@/api/metrics/get-popular-products'
 
 export const getPopularProductsMock = http.get<
   never,

@@ -1,9 +1,9 @@
 import { http, HttpResponse } from 'msw'
 
-import type {
+import {
   GetOrderDetailsParams,
   GetOrderDetailsResponse,
-} from '../order/get-order-details'
+} from '@/api/order/get-order-details'
 
 export const getOrderDetailsMock = http.get<
   GetOrderDetailsParams,

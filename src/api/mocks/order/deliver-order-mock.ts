@@ -1,6 +1,6 @@
 import { http, HttpResponse } from 'msw'
 
-import { DeliverOrderParams } from '../order/deliver-order'
+import { DeliverOrderParams } from '@/api/order/deliver-order'
 
 export const deliverOrderMock = http.patch<DeliverOrderParams, never, never>(
   '/orders/:orderId/deliver',
@@ -8,6 +8,7 @@ export const deliverOrderMock = http.patch<DeliverOrderParams, never, never>(
     if (params.orderId === 'error-order-id') {
       return new HttpResponse(null, { status: 400 })
     }
+
     return new HttpResponse(null, { status: 204 })
   },
 )

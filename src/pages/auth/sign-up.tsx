@@ -68,7 +68,7 @@ export function SignUp() {
 
           <form onSubmit={handleSubmit(handleSignUp)} className="space-y-4">
             <div className="space-y-2">
-              <Label htmlFor="restaurantName">Nome do resutante</Label>
+              <Label htmlFor="restaurantName">Nome do restaurante</Label>
               <Input
                 id="restaurantName"
                 type="text"

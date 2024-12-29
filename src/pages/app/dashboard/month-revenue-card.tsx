@@ -24,20 +24,23 @@ export function MonthRevenueCard() {
         {monthRevenue ? (
           <>
             <span className="text-2xl font-bold tracking-tight">
-              R$ 1248,60
+              {(monthRevenue.receipt / 100).toLocaleString('pt-BR', {
+                style: 'currency',
+                currency: 'BRL',
+              })}
             </span>
             <p className="text-xs text-muted-foreground">
               {monthRevenue.diffFromLastMonth >= 0 ? (
                 <>
                   <span className="text-emerald-500 dark:text-emerald-400">
-                    {monthRevenue.diffFromLastMonth}%
+                    +{monthRevenue.diffFromLastMonth}%
                   </span>{' '}
                   em relação ao mês passado
                 </>
               ) : (
                 <>
                   <span className="text-rose-500 dark:text-rose-400">
-                    {monthRevenue.diffFromLastMonth}%
+                    -{monthRevenue.diffFromLastMonth}%
                   </span>{' '}
                   em relação ao mês passado
                 </>

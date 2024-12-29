@@ -1,6 +1,6 @@
 import { http, HttpResponse } from 'msw'
 
-import type { UpdateProfileBody } from '../profile/update-profile'
+import { UpdateProfileBody } from '@/api/profile/update-profile'
 
 export const updateProfileMock = http.put<never, UpdateProfileBody>(
   '/profile',
